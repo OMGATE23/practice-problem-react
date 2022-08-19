@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import {useState} from 'react'
 
@@ -7,9 +6,9 @@ function App() {
   const [number, setNumber] = useState(0)
 
   function clickHandler(value){
-    if (value == true){
+    if (value === true){
       setNumber(number + 1)
-    } else if (value == false){
+    } else if (value === false){
       setNumber(number - 1)
     }
   }
