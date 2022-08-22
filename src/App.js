@@ -1,5 +1,6 @@
 import './App.css';
 import {useState} from 'react'
+import Title from './components/Title'
 
 
 function App() {
@@ -7,16 +8,22 @@ function App() {
 
   function clickHandler(value){
     if (value === true){
-      setNumber(number + 1)
+      setNumber((prevState) => {
+        return prevState + 1
+      })
     } else if (value === false){
-      setNumber(number - 1)
+      setNumber((prevState) => {
+        return prevState - 1
+      })
     }
   }
   return (
+
     <div className="App">
+      <Title/>
       <div>{number}</div>
       <button onClick={() => clickHandler(true)}>+</button>
-      <button onClick={() => {clickHandler(false)}}>-</button>
+      <button onClick={() => clickHandler(false)}>-</button>
     </div>
   );
 }
